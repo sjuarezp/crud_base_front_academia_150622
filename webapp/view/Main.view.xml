@@ -1,0 +1,90 @@
+<mvc:View
+	controllerName="com.csti.proveedores.crud.frontend001.controller.Main"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Table id="idProveedoresTable"
+		inset="false"
+        mode="SingleSelectMaster"
+		items="{
+			path: '/',
+			sorter: {
+				path: 'Name'
+			}
+		}">
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="{i18n>title}" level="H2"/>
+					<ToolbarSpacer />
+					
+                    <Button type="Accept" text="Nuevo" press="onNew" icon="sap-icon://add" />
+                    <Button type="Default" text="Actualizar" press="onUpdate" icon="sap-icon://refresh" />
+                    <Button type="Reject" text="Eliminar" press="onDelete" icon="sap-icon://delete" />
+                    <Button type="Default" text="Editar" press="onEdit" icon="sap-icon://edit" />
+
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<infoToolbar>
+			<OverflowToolbar>
+				<Label text=""/>
+			</OverflowToolbar>
+		</infoToolbar>
+
+        <!--
+
+ "ruc": "20568978546",
+    "razonSocial": "ABC PERU SAC",
+    "direccionFiscal": "AV JAVIER PRADO 1543",
+    "paginaWeb": "https://abcperu.com",
+    "correoCorporativo": "info@abcperu.com",
+
+        -->
+		<columns>
+			<Column
+				width="12em">
+				<Text text="RUC" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Razon Social" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<Text text="Dirección Fiscal" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center"> 
+				<Text text="Página Web" />
+			</Column>
+			<Column
+				hAlign="End">
+				<Text text="Correo Corporativo" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle">
+				<cells>
+					<ObjectIdentifier
+						title="{id}"
+						text="{ruc}"/>
+					<Text
+						text="{razonSocial}" />
+					<Text
+						text="{direccionFiscal}" />
+                    <Text
+						text="{paginaWeb}" />
+                    <Text
+						text="{correoCorporativo}" />
+					
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>
